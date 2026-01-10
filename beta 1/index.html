@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth focus:scroll-auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angel Frame | Produção Audiovisual de Elite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'af-navy': '#143044',
+              'af-blue': '#1e4b6d',
+              'af-gold': '#d4af37',
+              'af-silver': '#e5e7eb',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              tech: ['Syncopate', 'sans-serif'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 20s linear infinite',
+              'grid-move': 'grid-move 40s linear infinite',
+            },
+            keyframes: {
+              float: {
+                '0%': { transform: 'translate(0, 0) rotate(0deg)' },
+                '100%': { transform: 'translate(-100px, -100px) rotate(360deg)' },
+              },
+              'grid-move': {
+                '0%': { transform: 'translateY(0)' },
+                '100%': { transform: 'translateY(100px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        scroll-padding-top: 80px; 
+      }
+      body {
+        background-color: #0a0a0a;
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+      .glass {
+        background: rgba(20, 48, 68, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .text-gradient {
+        background: linear-gradient(to right, #ffffff, #1e4b6d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      /* Textura Tecnológica */
+      .tech-grid {
+        background-image: 
+          linear-gradient(to right, rgba(30, 75, 109, 0.1) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(30, 75, 109, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+      }
+
+      .tech-dots {
+        background-image: radial-gradient(circle, rgba(30, 75, 109, 0.2) 1px, transparent 1px);
+        background-size: 30px 30px;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #143044;
+        border-radius: 10px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
