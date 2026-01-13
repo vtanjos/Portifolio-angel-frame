@@ -20,6 +20,7 @@ const About: React.FC = () => {
 
   return (
     <section id="sobre" className="py-32 bg-[#000B1A] relative overflow-hidden border-t border-white/5">
+      {/* Elementos decorativos de fundo */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
       
       <div 
@@ -27,6 +28,8 @@ const About: React.FC = () => {
         className={`container mx-auto px-6 lg:px-12 relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
       >
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          
+          {/* Lado da Imagem com Moldura Tecnológica */}
           <div className="w-full lg:w-2/5 relative group">
             <div className="absolute -inset-4 border border-blue-500/20 rounded-3xl translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700"></div>
             <div className="absolute -inset-4 border border-blue-500/10 rounded-3xl -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700 delay-100"></div>
@@ -52,6 +55,7 @@ const About: React.FC = () => {
             </div>
           </div>
 
+          {/* Lado do Texto - Copywriting Completo */}
           <div className="w-full lg:w-3/5">
             <h2 className="text-[10px] font-bold tracking-[0.6em] uppercase text-blue-500 mb-6">O Coração da Angel Frame</h2>
             <h3 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter leading-none">
@@ -60,11 +64,31 @@ const About: React.FC = () => {
             
             <div className="space-y-6 text-slate-400 text-lg font-light leading-relaxed max-w-2xl">
               <p>
-                Nascido sob o sol de <span className="text-white font-semibold">Salvador, Bahia</span>, minha conexão com o audiovisual começou muito cedo.
+                Nascido sob o sol de <span className="text-white font-semibold">Salvador, Bahia</span>, minha conexão com o audiovisual começou muito cedo. Aos 10 anos, o que era uma brincadeira de criança já revelava uma obsessão pela estética e pelo poder de contar histórias.
               </p>
               <p>
-                Hoje, aos <span className="text-white font-semibold">23 anos</span>, celebro meia década de trajetória profissional sólida.
+                Hoje, aos <span className="text-white font-semibold">23 anos</span>, celebro meia década de trajetória profissional sólida. Uso o dom que <span className="text-blue-400 font-medium">Deus me deu</span> para elevar o nível das produções locais, unindo a agilidade da tecnologia mobile com um olhar artístico refinado que enxerga o que ninguém mais vê.
               </p>
+              <p className="border-l-2 border-blue-600 pl-6 italic text-slate-300">
+                "Crio pontes para o passado. Meu objetivo é que as pessoas possam revisitar seus momentos mais especiais com a mesma emoção do dia em que foram vividos."
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-8 mt-12">
+              <div className="flex flex-col">
+                <span className="text-2xl font-black text-white leading-none">5+</span>
+                <span className="text-[10px] uppercase tracking-widest text-slate-500 mt-2 font-bold">Anos de Carreira</span>
+              </div>
+              <div className="w-px h-10 bg-white/10"></div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-black text-white leading-none">Narrativa</span>
+                <span className="text-[10px] uppercase tracking-widest text-slate-500 mt-2 font-bold">Storytelling</span>
+              </div>
+              <div className="w-px h-10 bg-white/10"></div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-black text-white leading-none">SSA</span>
+                <span className="text-[10px] uppercase tracking-widest text-slate-500 mt-2 font-bold">Salvador, Bahia</span>
+              </div>
             </div>
           </div>
         </div>
