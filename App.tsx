@@ -109,7 +109,7 @@ const App: React.FC = () => {
             </h2>
             
             <p className="text-slate-400 text-lg md:text-xl mb-16 leading-relaxed">
-              Na Angel Frame, acreditamos que um vídeo foda nasce do olhar de quem está por trás da lente. Utilizamos <strong>Smartphones Top de Linha</strong> como nossas ferramentas principais pela agilidade extrema, discrição total e uma pós-produção cinematográfica de alto nível que entrega o padrão de luxo que seu projeto merece.
+              Na Angel Frame, acreditamos que um vídeo de qualidade nasce do olhar de quem está por trás da lente. Utilizamos <strong>Smartphones Top de Linha</strong> como nossas ferramentas principais pela agilidade extrema, discrição total e uma pós-produção cinematográfica de alto nível que entrega o padrão de luxo que seu projeto merece.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">

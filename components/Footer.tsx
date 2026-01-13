@@ -71,7 +71,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenQuote }) => {
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
           <p className="text-[9px] uppercase tracking-widest text-slate-600 font-bold">
-            &copy; 2024 Angel Frame Studio. All Rights Reserved.
+            &copy; 2026 Angel Frame Studio. All Rights Reserved.
           </p>
           <div className="flex gap-8 text-[9px] uppercase font-bold tracking-widest text-slate-600">
             <button className="hover:text-white transition-colors">Privacidade</button>
