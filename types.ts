@@ -1,16 +1,19 @@
 
-export interface Service {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
+export enum VideoCategory {
+  ALL = 'Todos',
+  WEDDING = 'Casamento',
+  PRE_WEDDING = 'Pre-Wedding',
+  CORPORATE = 'Corporativo',
+  LECTURE = 'Palestras',
+  EVENT = 'Eventos',
+  OTHERS = 'Outros'
 }
 
-export interface PortfolioItem {
+export interface VideoProject {
   id: string;
-  category: string;
   title: string;
+  category: VideoCategory;
   thumbnail: string;
-  videoUrl?: string;
-  youtubeId?: string; // ID do vídeo para embed direto
+  youtubeId: string;
+  description: string;
 }

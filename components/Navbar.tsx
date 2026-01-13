@@ -1,58 +1,54 @@
 
-import React from 'react';
-import { LOGO_ICON } from '../constants';
+import React, { useState, useEffect } from 'react';
 
 interface NavbarProps {
-  scrolled: boolean;
+  onOpenQuote: () => void;
+  onOpenDifferentials: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, id: string) => {
+const Navbar: React.FC<NavbarProps> = ({ onOpenQuote, onOpenDifferentials }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const scrollToSection = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+    element?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? 'py-3 glass shadow-2xl' : 'py-8 bg-transparent'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-[#000B1A]/80 backdrop-blur-md py-4 shadow-xl' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          <button onClick={(e) => scrollToSection(e as any, 'root')} className="flex items-center gap-3 group cursor-pointer">
-             <div className="w-10 h-10 overflow-hidden rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
-                <img src={LOGO_ICON} alt="Angel Frame Icon" className="w-full h-full object-contain" />
-             </div>
-             <div className="hidden md:block">
-                <span className="text-white font-tech tracking-widest text-lg font-bold">ANGEL <span className="text-af-blue">FRAME</span></span>
-             </div>
-          </button>
+        <a href="#home" onClick={scrollToTop} className="flex items-center gap-3 group">
+          <img 
+            src="Logo a.jpg" 
+            alt="Angel Frame Logo" 
+            className="w-10 h-10 object-contain brightness-0 invert transition-transform group-hover:scale-110" 
+          />
+          <span className="text-xl font-bold tracking-tighter text-white">ANGEL FRAME</span>
+        </a>
+        
+        <div className="hidden md:flex gap-10 text-sm font-medium tracking-widest uppercase items-center">
+          <a href="#home" onClick={scrollToTop} className="opacity-70 hover:opacity-100 transition-opacity">Início</a>
+          <a href="#portfolio" onClick={(e) => scrollToSection(e, 'portfolio')} className="opacity-70 hover:opacity-100 transition-opacity">Portfólio</a>
+          <button onClick={onOpenDifferentials} className="opacity-70 hover:opacity-100 transition-opacity uppercase tracking-widest text-sm font-medium">Diferenciais</button>
         </div>
 
-        <div className="hidden md:flex items-center gap-10">
-          <button onClick={(e) => scrollToSection(e, 'services')} className="text-sm font-medium text-af-silver hover:text-white transition-colors tracking-wide uppercase">Serviços</button>
-          <button onClick={(e) => scrollToSection(e, 'portfolio')} className="text-sm font-medium text-af-silver hover:text-white transition-colors tracking-wide uppercase">Portfólio</button>
-          <button 
-            onClick={(e) => scrollToSection(e, 'contact')}
-            className="px-6 py-2.5 bg-white text-af-navy text-sm font-bold rounded-full hover:bg-af-blue hover:text-white transition-all transform hover:scale-105 active:scale-95 uppercase tracking-tighter"
-          >
-            Fazer Orçamento
-          </button>
-        </div>
-
-        <button className="md:hidden text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
+        <button 
+          onClick={onOpenQuote}
+          className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-full text-xs font-bold transition-all shadow-lg hover:shadow-blue-500/20 uppercase tracking-widest"
+        >
+          ORÇAMENTO
         </button>
       </div>
     </nav>
