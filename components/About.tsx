@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 // AQUI ESTÁ A MUDANÇA 1: Importamos a foto para o código conhecer ela
-import fotoPerfil from './AirBrush_20241023155532.jpg';
+import fotoPerfil from '.foto-victor.jpg';
 
 const About: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
