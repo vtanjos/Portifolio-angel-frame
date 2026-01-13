@@ -1,6 +1,5 @@
+
 import React, { useEffect, useRef, useState } from 'react';
-// CORREÇÃO: Agora importando com o nome certo que você criou
-import fotoPerfil from './foto-victor.jpg';
 
 const About: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -45,11 +44,11 @@ const About: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-[#000B1A]"></div>
               
               <img 
-                src={fotoPerfil} 
+                src="AirBrush_20241023155532.jpg" 
                 alt="Victor Anjos - Angel Frame" 
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100 relative z-10"
                 onError={(e) => {
-                  console.error("Erro ao carregar a imagem.");
+                  console.error("Erro ao carregar a imagem. Verifique se o arquivo AirBrush_20241023155532.jpg está na raiz do projeto.");
                   (e.target as HTMLImageElement).style.display = 'none';
                 }}
               />
