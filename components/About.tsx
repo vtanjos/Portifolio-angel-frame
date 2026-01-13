@@ -1,5 +1,6 @@
-
 import React, { useEffect, useRef, useState } from 'react';
+// AQUI ESTÁ A MUDANÇA 1: Importamos a foto para o código conhecer ela
+import fotoPerfil from './AirBrush_20241023155532.jpg';
 
 const About: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -43,12 +44,13 @@ const About: React.FC = () => {
               {/* Fallback caso a imagem não exista - Um gradiente elegante */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-[#000B1A]"></div>
               
+              {/* AQUI ESTÁ A MUDANÇA 2: Usamos a variável da foto importada */}
               <img 
-                src="AirBrush_20241023155532.jpg" 
+                src={fotoPerfil} 
                 alt="Victor Anjos - Angel Frame" 
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100 relative z-10"
                 onError={(e) => {
-                  console.error("Erro ao carregar a imagem. Verifique se o arquivo AirBrush_20241023155532.jpg está na raiz do projeto.");
+                  console.error("Erro ao carregar a imagem.");
                   (e.target as HTMLImageElement).style.display = 'none';
                 }}
               />
