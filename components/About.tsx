@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-// AQUI ESTÁ A MUDANÇA 1: Importamos a foto para o código conhecer ela
-import fotoPerfil from '.foto-victor.jpg';
+// CORREÇÃO: Agora importando com o nome certo que você criou
+import fotoPerfil from './foto-victor.jpg';
 
 const About: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -44,7 +44,6 @@ const About: React.FC = () => {
               {/* Fallback caso a imagem não exista - Um gradiente elegante */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-[#000B1A]"></div>
               
-              {/* AQUI ESTÁ A MUDANÇA 2: Usamos a variável da foto importada */}
               <img 
                 src={fotoPerfil} 
                 alt="Victor Anjos - Angel Frame" 
