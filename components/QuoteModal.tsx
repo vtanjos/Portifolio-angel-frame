@@ -30,7 +30,7 @@ const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
   const niches = [
     VideoCategory.WEDDING,
     VideoCategory.PRE_WEDDING,
-    VideoCategory.CORPORATE,
+    VideoCategory.REELS_TIKTOK,
     VideoCategory.LECTURE,
     VideoCategory.EVENT,
     VideoCategory.OTHERS

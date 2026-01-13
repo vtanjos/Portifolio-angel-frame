@@ -27,9 +27,49 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .navy-glow {
-            box-shadow: 0 0 40px rgba(0, 31, 63, 0.4);
+        .reveal-hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
         }
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Viewfinder HUD Effects */
+        .viewfinder-corner {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-color: rgba(37, 99, 235, 0.5);
+            transition: all 0.5s ease;
+        }
+        .group:hover .viewfinder-corner {
+            border-color: rgba(37, 99, 235, 1);
+            width: 25px;
+            height: 25px;
+        }
+        
+        /* Scanline effect */
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(37, 99, 235, 0.5), transparent);
+            position: absolute;
+            top: -10%;
+            left: 0;
+            z-index: 10;
+            pointer-events: none;
+        }
+        .group:hover .scanline {
+            animation: scan 2s linear infinite;
+        }
+        @keyframes scan {
+            0% { top: 0%; }
+            100% { top: 100%; }
+        }
+
         ::-webkit-scrollbar {
             width: 8px;
         }
